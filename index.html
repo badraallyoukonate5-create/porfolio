@@ -1,177 +1,204 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Badra-Ali Konate — Portfolio</title>
-<style>
-  :root{
-    --bg:#0d1410;
-    --bg-soft:#121b16;
-    --panel:#172019;
-    --line:#26332b;
-    --text:#e7efe9;
-    --muted:#8aa395;
-    --green:#1d9e75;
-    --green-soft:#16352a;
-    --orange:#f5841f;
-    --mono:'JetBrains Mono','Fira Code',monospace;
-    --sans:'Space Grotesk','Inter',sans-serif;
-  }
-  *{margin:0;padding:0;box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    background:var(--bg);
-    color:var(--text);
-    font-family:var(--sans);
-    line-height:1.6;
-    overflow-x:hidden;
-  }
-  a{color:var(--green);text-decoration:none;}
+    <!-- 
+        PROPRIÉTÉ INTELLECTUELLE & DROITS D'AUTEUR RÉSERVÉS
+        © 2026 DreamWeb. Tous droits réservés.
+        Ce code source et son design sont protégés par les lois internationales sur le droit d'auteur.
+        Toute reproduction ou revente non autorisée constitue une contrefaçon.
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DreamWeb</title>
+    <h1><mark>Créativy & Photographie</mark></h1>
 
-  /* Nav */
-  nav{
-    position:fixed;top:0;left:0;right:0;
-    display:flex;justify-content:space-between;align-items:center;
-    padding:20px 6vw;
-    background:rgba(13,20,16,0.85);
-    backdrop-filter:blur(8px);
-    border-bottom:1px solid var(--line);
-    z-index:100;
-  }
-  .logo{font-family:var(--mono);font-weight:700;font-size:1.1rem;}
-  .logo span{color:var(--orange);}
-  nav ul{display:flex;gap:28px;list-style:none;}
-  nav a{color:var(--muted);font-size:0.95rem;transition:color .2s;}
-  nav a:hover{color:var(--green);}
+    <!-- ICI : L'icône officielle pour l'onglet du navigateur -->
+    <link rel="icon" type="image.png" href="image.png">
 
-  /* Hero */
-  header{
-    min-height:100vh;
-    display:flex;align-items:center;
-    padding:120px 6vw 60px;
-    position:relative;
-  }
-  .hero-grid{
-    display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:center;width:100%;
-  }
-  .eyebrow{
-    font-family:var(--mono);color:var(--orange);font-size:0.85rem;
-    letter-spacing:0.15em;text-transform:uppercase;margin-bottom:18px;
-    display:flex;align-items:center;gap:10px;
-  }
-  .eyebrow::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--orange);
-    box-shadow:0 0 0 0 rgba(245,132,31,.6);animation:pulse 2s infinite;}
-  @keyframes pulse{
-    0%{box-shadow:0 0 0 0 rgba(245,132,31,.5);}
-    70%{box-shadow:0 0 0 8px rgba(245,132,31,0);}
-    100%{box-shadow:0 0 0 0 rgba(245,132,31,0);}
-  }
-  h1{
-    font-size:clamp(2.4rem,5.5vw,4.2rem);
-    line-height:1.1;font-weight:700;margin-bottom:20px;
-  }
-  h1 .accent{color:var(--green);}
-  .hero-desc{color:var(--muted);font-size:1.05rem;max-width:480px;margin-bottom:32px;}
-  .btn-row{display:flex;gap:16px;flex-wrap:wrap;}
-  .btn{
-    font-family:var(--mono);font-size:0.9rem;padding:13px 26px;border-radius:8px;
-    border:1px solid var(--line);transition:all .25s;display:inline-block;
-  }
-  .btn-primary{background:var(--green);color:#0d1410;font-weight:600;border:none;}
-  .btn-primary:hover{background:#22b886;transform:translateY(-2px);}
-  .btn-ghost{color:var(--text);}
-  .btn-ghost:hover{border-color:var(--orange);color:var(--orange);}
-
-  /* Code window signature */
-  .editor{
-    background:var(--panel);border:1px solid var(--line);border-radius:12px;
-    box-shadow:0 30px 60px -30px rgba(0,0,0,0.6);overflow:hidden;
-    font-family:var(--mono);font-size:0.85rem;
-  }
-  .editor-bar{
-    display:flex;align-items:center;gap:8px;padding:12px 16px;
-    background:var(--bg-soft);border-bottom:1px solid var(--line);
-  }
-  .dot{width:11px;height:11px;border-radius:50%;}
-  .dot.red{background:#e0605b;} .dot.yellow{background:#e6c068;} .dot.green{background:var(--green);}
-  .tabs{display:flex;gap:2px;background:var(--bg-soft);border-bottom:1px solid var(--line);}
-  .tab{padding:9px 18px;color:var(--muted);font-size:0.8rem;border-right:1px solid var(--line);cursor:default;}
-  .tab.active{color:var(--text);background:var(--panel);border-bottom:2px solid var(--green);}
-  .code-body{padding:20px 22px;min-height:260px;}
-  .code-line{display:flex;gap:16px;margin-bottom:6px;}
-  .ln{color:#3d4a42;width:18px;text-align:right;user-select:none;}
-  .kw{color:var(--orange);} .str{color:var(--green);} .com{color:var(--muted);} .fn{color:#7fc8ff;} .var{color:#e7efe9;}
-
-  /* Sections */
-  section{padding:90px 6vw;border-top:1px solid var(--line);}
-  .section-head{display:flex;align-items:baseline;gap:18px;margin-bottom:50px;}
-  .section-head h2{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;}
-  .section-tag{font-family:var(--mono);color:var(--muted);font-size:0.85rem;}
-
-  /* Skills */
-  .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-  .skill-card{
-    background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:28px;
-    transition:border-color .25s, transform .25s;
-  }
-  .skill-card:hover{border-color:var(--green);transform:translateY(-4px);}
-  .skill-icon{font-family:var(--mono);font-size:1.6rem;color:var(--orange);margin-bottom:14px;}
-  .skill-card h3{margin-bottom:8px;font-size:1.15rem;}
-  .skill-card p{color:var(--muted);font-size:0.92rem;margin-bottom:18px;}
-  .bar{height:6px;background:var(--bg-soft);border-radius:3px;overflow:hidden;}
-  .bar-fill{height:100%;background:linear-gradient(90deg,var(--green),var(--orange));border-radius:3px;
-    width:0;transition:width 1.4s ease;}
-  .bar-label{display:flex;justify-content:space-between;font-family:var(--mono);font-size:0.75rem;color:var(--muted);margin-top:8px;}
-
-  /* Projects */
-  .projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
-  .project-card{
-    background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden;
-    display:flex;flex-direction:column;transition:transform .25s, border-color .25s;
-  }
-  .project-card:hover{transform:translateY(-4px);border-color:var(--orange);}
-  .project-head{padding:22px 24px 0;}
-  .project-stack{display:flex;gap:8px;margin:14px 0;flex-wrap:wrap;}
-  .chip{font-family:var(--mono);font-size:0.72rem;padding:4px 10px;border-radius:20px;
-    background:var(--green-soft);color:var(--green);border:1px solid var(--line);}
-  .chip.orange{background:rgba(245,132,31,0.1);color:var(--orange);}
-  .project-card h3{font-size:1.25rem;margin-bottom:6px;}
-  .project-card p{color:var(--muted);font-size:0.92rem;}
-  .project-foot{margin-top:auto;padding:18px 24px;border-top:1px solid var(--line);
-    font-family:var(--mono);font-size:0.85rem;display:flex;justify-content:space-between;}
-
-  /* About / timeline */
-  .about-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:60px;}
-  .about-text p{color:var(--muted);margin-bottom:16px;}
-  .timeline{border-left:2px solid var(--line);padding-left:28px;}
-  .t-item{position:relative;margin-bottom:32px;}
-  .t-item::before{content:"";position:absolute;left:-34px;top:4px;width:11px;height:11px;
-    border-radius:50%;background:var(--bg);border:2px solid var(--orange);}
-  .t-date{font-family:var(--mono);color:var(--orange);font-size:0.8rem;margin-bottom:4px;display:block;}
-  .t-item h4{margin-bottom:4px;}
-  .t-item p{color:var(--muted);font-size:0.92rem;}
-
-  /* Contact */
-  .contact{text-align:center;}
-  .contact h2{font-size:clamp(2rem,5vw,3.2rem);margin-bottom:18px;}
-  .contact p{color:var(--muted);max-width:520px;margin:0 auto 30px;}
-  .contact-links{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;}
-
-  footer{padding:30px 6vw;border-top:1px solid var(--line);
-    display:flex;justify-content:space-between;color:var(--muted);font-family:var(--mono);font-size:0.8rem;flex-wrap:wrap;gap:10px;}
-
-  @media (max-width:860px){
-    .hero-grid,.about-grid{grid-template-columns:1fr;}
-    .skills-grid{grid-template-columns:1fr;}
-    .projects-grid{grid-template-columns:1fr;}
-    nav ul{display:none;}
-    .editor{order:-1;}
-  }
-</style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-...
-<!-- Voir plus bas -->
+    <header class="sticky-top bg-white border-bottom">
+        <nav class="navbar navbar-expand-lg navbar-light py-3">
+            <div class="container">
+                <a class="navbar-brand fw-extrabold text-uppercase logo-brand" href="#">
+                    Dream<span class="text-danger">Web</span>
+                </a>
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto fw-semibold gap-3">
+                        <li class="nav-item"><a class="nav-link active" href="#accueil">Accueil</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#vision">Notre Vision</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <!-- SECTION 1 : ACCUEIL / HERO -->
+        <section id="accueil" class="hero-section d-flex align-items-center py-5">
+            <div class="container">
+                <div class="row align-items-center gy-5">
+                    <div class="col-12 col-lg-6 text-center text-lg-start">
+                        <span class="badge bg-danger-subtle text-danger mb-3 px-3 py-2 rounded-pill fw-bold uppercase-tracking">Studio Créatif</span>
+                        <h1 class="display-3 fw-extrabold mb-3 line-height-sm">Capturer l'instant, Bâtir le numérique.</h1>
+                        <p class="lead text-muted mb-4">DreamWeb fusionne l'art de la photographie professionnelle avec la puissance du développement web pour créer des univers uniques.</p>
+                        <div class="d-sm-flex justify-content-center justify-content-lg-start gap-3">
+                            <a href="#portfolio" class="btn btn-dark btn-lg px-4 mb-2 mb-sm-0 w-100 w-sm-auto">Voir le Portfolio</a>
+                            <a href="#contact" class="btn btn-outline-dark btn-lg px-4 w-100 w-sm-auto">Collaborer</a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <div class="hero-img-box position-relative">
+                            <img src="shooting_photo.jpg" alt="Photographe professionnel DreamWeb" class="img-fluid rounded-4 shadow-lg dynamic-img">
+                            <div class="floating-badge bg-white shadow-sm p-3 rounded-3 position-absolute bottom-0 start-0 m-4 d-none d-sm-flex align-items-center gap-3">
+                                <i class="bi bi-camera-reels-fill text-danger fs-3"></i>
+                                <div>
+                                    <h6 class="mb-0 fw-bold">Direction Artistique</h6>
+                                    <small class="text-muted">100% Premium</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-3 px-2 border-start border-danger border-3">
+                            <p class="fst-italic text-muted small mb-0"><strong>Derrière l'objectif :</strong> "Ce cliché capture l'essence de notre studio. Un regard concentré, une lumière tamisée de fin de journée, et cet instant suspendu juste avant le déclenchement, là où l'histoire commence à s'écrire."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2 : NOTRE VISION -->
+        <section id="vision" class="py-5 bg-light">
+            <div class="container py-4">
+                <div class="row align-items-center flex-row-reverse gy-5">
+                    <div class="col-12 col-lg-6 ps-lg-5">
+                        <h2 class="fw-extrabold display-5 mb-3">Une identité visuelle percutante</h2>
+                        <p class="text-muted mb-4">Tout comme une touche de couleur vive attire le regard dans un paysage urbain, nous concevons des interfaces web qui se démarquent instantanément.</p>
+                        <div class="d-flex gap-3 mb-3">
+                            <div class="icon-circle bg-white text-danger shadow-sm"><i class="bi bi-lightning-charge-fill"></i></div>
+                            <div>
+                                <h5 class="fw-bold mb-1">Performance Web</h5>
+                                <p class="text-muted small">Des structures fluides, légères et optimisées pour tous les écrans.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex gap-3">
+                            <div class="icon-circle bg-white text-danger shadow-sm"><i class="bi bi-eye-fill"></i></div>
+                            <div>
+                                <h5 class="fw-bold mb-1">Précision Visuelle</h5>
+                                <p class="text-muted small">Chaque pixel et chaque alignement sont pensés pour le confort de l'utilisateur.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <img src="photos_call_center.jpg" alt="Vision Artistique" class="img-fluid rounded-4 shadow-sm custom-height-img">
+                        <div class="mt-3 px-2 border-start border-danger border-3">
+                            <p class="fst-italic text-muted small mb-0"><strong>Le contraste urbain :</strong> "Perdue au milieu de la grisaille, cette touche rouge vif symbolise notre philosophie : ne pas se fondre dans la masse, mais briller avec audace au milieu du bruit numérique."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3 : PORTFOLIO / GALERIE -->
+        <section id="portfolio" class="py-5">
+            <div class="container py-4">
+                <div class="text-center max-w-md mx-auto mb-5">
+                    <h2 class="fw-extrabold text-uppercase">Notre Galerie Créative</h2>
+                    <div class="line-decor bg-danger mx-auto my-3"></div>
+                    <p class="text-muted">Un aperçu de nos univers visuels favoris : mouvement, style vintage, gastronomie et design d'espace.</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="portfolio-card position-relative overflow-hidden rounded-4 shadow-sm ratio ratio-1x1 mb-2">
+                            <img src="kenny-leys-TR5h-QeMf4o-unsplash.jpg" alt="Mouvement" class="img-cover">
+                            <div class="portfolio-overlay d-flex align-items-end p-3">
+                                <span class="text-white fw-bold small">Concept Vitesse / Performance</span>
+                            </div>
+                        </div>
+                        <p class="text-muted small px-1"><i class="bi bi-journal-text text-danger me-1"></i><strong>Élan :</strong> Capturer la course, c'est figer la force brute et la persévérance humaine à la milliseconde près.</p>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="portfolio-card position-relative overflow-hidden rounded-4 shadow-sm ratio ratio-1x1 mb-2">
+                            <img src="photo_voiture.jpg" alt="Style Vintage" class="img-cover">
+                            <div class="portfolio-overlay d-flex align-items-end p-3">
+                                <span class="text-white fw-bold small">Authenticité & Patrimoine</span>
+                            </div>
+                        </div>
+                        <p class="text-muted small px-1"><i class="bi bi-journal-text text-danger me-1"></i><strong>Nostalgie :</strong> Trouvée au détour d'une ruelle cubaine, cette mécanique d'époque raconte le temps qui passe mais ne perd rien de sa superbe.</p>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="portfolio-card position-relative overflow-hidden rounded-4 shadow-sm ratio ratio-1x1 mb-2">
+                            <img src="photos_nourriture.jpg" alt="Art Culinaire" class="img-cover">
+                            <div class="portfolio-overlay d-flex align-items-end p-3">
+                                <span class="text-white fw-bold small">Gastronomie & Sensorialité</span>
+                            </div>
+                        </div>
+                        <p class="text-muted small px-1"><i class="bi bi-journal-text text-danger me-1"></i><strong>Partage :</strong> La photographie culinaire ne montre pas seulement un plat, elle transmet l'odeur des épices et la chaleur d'un repas partagé.</p>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="portfolio-card position-relative overflow-hidden rounded-4 shadow-sm ratio ratio-1x1 mb-2">
+                            <img src="photos_bathroom.jpg" alt="Design Intérieur" class="img-cover">
+                            <div class="portfolio-overlay d-flex align-items-end p-3">
+                                <span class="text-white fw-bold small">Architecture & Minimalisme</span>
+                            </div>
+                        </div>
+                        <p class="text-muted small px-1"><i class="bi bi-journal-text text-danger me-1"></i><strong>Équilibre :</strong> Une étude sur la lumière intérieure. Comment les lignes géométriques et l'eau s'unissent pour créer un havre de paix intemporel.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4 : CONTACT -->
+        <section id="contact" class="py-5 bg-dark text-white rounded-top-5">
+            <div class="container py-4">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-8 col-lg-6">
+                        <div class="text-center mb-4">
+                            <h2 class="fw-extrabold text-white">Prêt à lancer votre projet ?</h2>
+                            <p class="text-secondary small">Contactez l'équipe de DreamWeb pour toute collaboration.</p>
+                        </div>
+                        <form class="contact-form">
+                            <div class="mb-3">
+                                <input type="text" class="form-control form-control-lg bg-secondary bg-opacity-10 text-white border-secondary border-opacity-20" placeholder="Votre nom complet" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="email" class="form-control form-control-lg bg-secondary bg-opacity-10 text-white border-secondary border-opacity-20" placeholder="Adresse Email" required>
+                            </div>
+                            <div class="mb-4">
+                                <textarea class="form-control form-control-lg bg-secondary bg-opacity-10 text-white border-secondary border-opacity-20" rows="4" placeholder="Parlez-nous de vos besoins..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-danger btn-lg w-100 fw-bold py-3 text-uppercase">Envoyer le message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-secondary py-4 border-top border-secondary border-opacity-20">
+        <div class="container">
+            <div class="row align-items-center gy-3 text-center text-md-start">
+                <div class="col-12 col-md-6">
+                    <span class="fw-bold text-white text-uppercase tracking-wider">DreamWeb</span> 
+                    &copy; 2026. Tout droit réservé à l'auteur.
+                </div>
+                <div class="col-12 col-md-6 text-md-end">
+                    <small class="text-muted text-opacity-70 fst-italic">
+                        Propriété intellectuelle exclusive. Reproduction, distribution et revente interdites sans autorisation.
+                    </small>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
