@@ -1,41 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- 
-        PROPRIÉTÉ INTELLECTUELLE & DROITS D'AUTEUR RÉSERVÉS
-        © 2026 DreamWeb. Tous droits réservés.
-        Ce code source et son design sont protégés par les lois internationales sur le droit d'auteur.
-        Toute reproduction ou revente non autorisée constitue une contrefaçon.
-    -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DreamWeb</title>
-    <h1><mark>Créativy & Photographie</mark></h1>
-
-    <!-- ICI : L'icône officielle pour l'onglet du navigateur -->
-    <link rel="icon" type="image.png" href="image.png">
-
+    <title>DreamWeb | Creativity and Photography</title>
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <header class="sticky-top bg-white border-bottom">
         <nav class="navbar navbar-expand-lg navbar-light py-3">
             <div class="container">
-                <a class="navbar-brand fw-extrabold text-uppercase logo-brand" href="#">
-                    Dream<span class="text-danger">Web</span>
-                </a>
-                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <a class="navbar-brand fw-bold text-uppercase" href="#">Dream<span class="text-danger">Web</span></a>
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto fw-semibold gap-3">
-                        <li class="nav-item"><a class="nav-link active" href="#accueil">Accueil</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#vision">Notre Vision</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#vision">Vision</a></li>
                         <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                     </ul>
@@ -43,140 +34,98 @@
             </div>
         </nav>
     </header>
+
     <main>
-        <!-- SECTION 1 : ACCUEIL / HERO -->
-        <section id="accueil" class="hero-section d-flex align-items-center py-5">
+        <section id="home" class="py-5">
             <div class="container">
                 <div class="row align-items-center gy-5">
                     <div class="col-12 col-lg-6 text-center text-lg-start">
-                        <span class="badge bg-danger-subtle text-danger mb-3 px-3 py-2 rounded-pill fw-bold uppercase-tracking">Studio Créatif</span>
-                        <h1 class="display-3 fw-extrabold mb-3 line-height-sm">Capturer l'instant, Bâtir le numérique.</h1>
-                        <p class="lead text-muted mb-4">DreamWeb fusionne l'art de la photographie professionnelle avec la puissance du développement web pour créer des univers uniques.</p>
-                        <div class="d-sm-flex justify-content-center justify-content-lg-start gap-3">
-                            <a href="#portfolio" class="btn btn-dark btn-lg px-4 mb-2 mb-sm-0 w-100 w-sm-auto">Voir le Portfolio</a>
-                            <a href="#contact" class="btn btn-outline-dark btn-lg px-4 w-100 w-sm-auto">Collaborer</a>
-                        </div>
+                        <span class="badge bg-danger-subtle text-danger mb-3 px-3 py-2 rounded-pill fw-bold">Creative Studio</span>
+                        <h1 class="display-4 fw-black mb-3">Capture the moment, Build the digital.</h1>
+                        <p class="lead text-muted mb-4">Merging the visual art of photography with the power of modern web development.</p>
+                        <a href="#portfolio" class="btn btn-dark btn-lg px-4">Discover Our Work</a>
                     </div>
                     <div class="col-12 col-lg-6">
-                        <div class="hero-img-box position-relative">
-                            <img src="shooting_photo.jpg" alt="Photographe professionnel DreamWeb" class="img-fluid rounded-4 shadow-lg dynamic-img">
-                            <div class="floating-badge bg-white shadow-sm p-3 rounded-3 position-absolute bottom-0 start-0 m-4 d-none d-sm-flex align-items-center gap-3">
-                                <i class="bi bi-camera-reels-fill text-danger fs-3"></i>
-                                <div>
-                                    <h6 class="mb-0 fw-bold">Direction Artistique</h6>
-                                    <small class="text-muted">100% Premium</small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mt-3 px-2 border-start border-danger border-3">
-                            <p class="fst-italic text-muted small mb-0"><strong>Derrière l'objectif :</strong> "Ce cliché capture l'essence de notre studio. Un regard concentré, une lumière tamisée de fin de journée, et cet instant suspendu juste avant le déclenchement, là où l'histoire commence à s'écrire."</p>
-                        </div>
+                        <img src="shooting_photo.jpg" alt="Red Photography Shooting" class="img-fluid rounded-4 shadow-lg">
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SECTION 2 : NOTRE VISION -->
         <section id="vision" class="py-5 bg-light">
-            <div class="container py-4">
+            <div class="container">
                 <div class="row align-items-center flex-row-reverse gy-5">
                     <div class="col-12 col-lg-6 ps-lg-5">
-                        <h2 class="fw-extrabold display-5 mb-3">Une identité visuelle percutante</h2>
-                        <p class="text-muted mb-4">Tout comme une touche de couleur vive attire le regard dans un paysage urbain, nous concevons des interfaces web qui se démarquent instantanément.</p>
-                        <div class="d-flex gap-3 mb-3">
-                            <div class="icon-circle bg-white text-danger shadow-sm"><i class="bi bi-lightning-charge-fill"></i></div>
-                            <div>
-                                <h5 class="fw-bold mb-1">Performance Web</h5>
-                                <p class="text-muted small">Des structures fluides, légères et optimisées pour tous les écrans.</p>
-                            </div>
-                        </div>
-                        <div class="d-flex gap-3">
-                            <div class="icon-circle bg-white text-danger shadow-sm"><i class="bi bi-eye-fill"></i></div>
-                            <div>
-                                <h5 class="fw-bold mb-1">Précision Visuelle</h5>
-                                <p class="text-muted small">Chaque pixel et chaque alignement sont pensés pour le confort de l'utilisateur.</p>
-                            </div>
-                        </div>
+                        <h2 class="fw-bold display-5 mb-3">A Striking Visual Identity</h2>
+                        <p class="text-muted">Like a burst of bright color in an urban landscape, we design unique interfaces that capture attention at first glance.</p>
                     </div>
                     <div class="col-12 col-lg-6">
-                        <img src="photos_call_center.jpg" alt="Vision Artistique" class="img-fluid rounded-4 shadow-sm custom-height-img">
-                        <div class="mt-3 px-2 border-start border-danger border-3">
-                            <p class="fst-italic text-muted small mb-0"><strong>Le contraste urbain :</strong> "Perdue au milieu de la grisaille, cette touche rouge vif symbolise notre philosophie : ne pas se fondre dans la masse, mais briller avec audace au milieu du bruit numérique."</p>
-                        </div>
+                        <img src="photos_call_center.jpg" alt="Red Telephone Booth" class="img-fluid rounded-4 shadow-sm" style="height: 450px; width: 100%; object-fit: cover;">
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SECTION 3 : PORTFOLIO / GALERIE -->
         <section id="portfolio" class="py-5">
-            <div class="container py-4">
-                <div class="text-center max-w-md mx-auto mb-5">
-                    <h2 class="fw-extrabold text-uppercase">Notre Galerie Créative</h2>
-                    <div class="line-decor bg-danger mx-auto my-3"></div>
-                    <p class="text-muted">Un aperçu de nos univers visuels favoris : mouvement, style vintage, gastronomie et design d'espace.</p>
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold text-uppercase">Our Creative Gallery</h2>
+                    <p class="text-muted">Explore our worlds of visual discovery.</p>
                 </div>
+
                 <div class="row g-4">
-                    <div class="col-12 col-md-6 col-lg-3">
-                        <div class="portfolio-card position-relative overflow-hidden rounded-4 shadow-sm ratio ratio-1x1 mb-2">
-                            <img src="kenny-leys-TR5h-QeMf4o-unsplash.jpg" alt="Mouvement" class="img-cover">
-                            <div class="portfolio-overlay d-flex align-items-end p-3">
-                                <span class="text-white fw-bold small">Concept Vitesse / Performance</span>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                        <div class="position-relative overflow-hidden rounded-4 shadow-sm ratio ratio-1x1 portfolio-card">
+                            <img src="kenny-leys-TR5h-QeMf4o-unsplash.jpg" alt="Speed" class="img-cover">
+                            <div class="portfolio-overlay p-3 d-flex align-items-end">
+                                <span class="text-white fw-bold small">Speed & Performance Concept</span>
                             </div>
                         </div>
-                        <p class="text-muted small px-1"><i class="bi bi-journal-text text-danger me-1"></i><strong>Élan :</strong> Capturer la course, c'est figer la force brute et la persévérance humaine à la milliseconde près.</p>
                     </div>
-                    <div class="col-12 col-md-6 col-lg-3">
-                        <div class="portfolio-card position-relative overflow-hidden rounded-4 shadow-sm ratio ratio-1x1 mb-2">
-                            <img src="photo_voiture.jpg" alt="Style Vintage" class="img-cover">
-                            <div class="portfolio-overlay d-flex align-items-end p-3">
-                                <span class="text-white fw-bold small">Authenticité & Patrimoine</span>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                        <div class="position-relative overflow-hidden rounded-4 shadow-sm ratio ratio-1x1 portfolio-card">
+                            <img src="photo_voiture.jpg" alt="Vintage Car" class="img-cover">
+                            <div class="portfolio-overlay p-3 d-flex align-items-end">
+                                <span class="text-white fw-bold small">Authenticity & Heritage</span>
                             </div>
                         </div>
-                        <p class="text-muted small px-1"><i class="bi bi-journal-text text-danger me-1"></i><strong>Nostalgie :</strong> Trouvée au détour d'une ruelle cubaine, cette mécanique d'époque raconte le temps qui passe mais ne perd rien de sa superbe.</p>
                     </div>
-                    <div class="col-12 col-md-6 col-lg-3">
-                        <div class="portfolio-card position-relative overflow-hidden rounded-4 shadow-sm ratio ratio-1x1 mb-2">
-                            <img src="photos_nourriture.jpg" alt="Art Culinaire" class="img-cover">
-                            <div class="portfolio-overlay d-flex align-items-end p-3">
-                                <span class="text-white fw-bold small">Gastronomie & Sensorialité</span>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                        <div class="position-relative overflow-hidden rounded-4 shadow-sm ratio ratio-1x1 portfolio-card">
+                            <img src="photos_nourriture.jpg" alt="Food" class="img-cover">
+                            <div class="portfolio-overlay p-3 d-flex align-items-end">
+                                <span class="text-white fw-bold small">Gastronomy & Sensoriality</span>
                             </div>
                         </div>
-                        <p class="text-muted small px-1"><i class="bi bi-journal-text text-danger me-1"></i><strong>Partage :</strong> La photographie culinaire ne montre pas seulement un plat, elle transmet l'odeur des épices et la chaleur d'un repas partagé.</p>
                     </div>
-                    <div class="col-12 col-md-6 col-lg-3">
-                        <div class="portfolio-card position-relative overflow-hidden rounded-4 shadow-sm ratio ratio-1x1 mb-2">
-                            <img src="photos_bathroom.jpg" alt="Design Intérieur" class="img-cover">
-                            <div class="portfolio-overlay d-flex align-items-end p-3">
-                                <span class="text-white fw-bold small">Architecture & Minimalisme</span>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                        <div class="position-relative overflow-hidden rounded-4 shadow-sm ratio ratio-1x1 portfolio-card">
+                            <img src="photos_bathroom.jpg" alt="Interior Design" class="img-cover">
+                            <div class="portfolio-overlay p-3 d-flex align-items-end">
+                                <span class="text-white fw-bold small">Architecture & Minimalism</span>
                             </div>
                         </div>
-                        <p class="text-muted small px-1"><i class="bi bi-journal-text text-danger me-1"></i><strong>Équilibre :</strong> Une étude sur la lumière intérieure. Comment les lignes géométriques et l'eau s'unissent pour créer un havre de paix intemporel.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SECTION 4 : CONTACT -->
         <section id="contact" class="py-5 bg-dark text-white rounded-top-5">
             <div class="container py-4">
                 <div class="row justify-content-center">
                     <div class="col-12 col-md-8 col-lg-6">
-                        <div class="text-center mb-4">
-                            <h2 class="fw-extrabold text-white">Prêt à lancer votre projet ?</h2>
-                            <p class="text-secondary small">Contactez l'équipe de DreamWeb pour toute collaboration.</p>
-                        </div>
-                        <form class="contact-form">
+                        <h2 class="fw-bold text-center mb-4">Have a Project? Write to Us</h2>
+                        <form onsubmit="event.preventDefault(); alert('Message sent (Front-End Simulation)!');">
                             <div class="mb-3">
-                                <input type="text" class="form-control form-control-lg bg-secondary bg-opacity-10 text-white border-secondary border-opacity-20" placeholder="Votre nom complet" required>
+                                <input type="text" class="form-control bg-transparent text-white border-secondary" placeholder="Your Name" required>
                             </div>
                             <div class="mb-3">
-                                <input type="email" class="form-control form-control-lg bg-secondary bg-opacity-10 text-white border-secondary border-opacity-20" placeholder="Adresse Email" required>
+                                <input type="email" class="form-control bg-transparent text-white border-secondary" placeholder="Your Email" required>
                             </div>
                             <div class="mb-4">
-                                <textarea class="form-control form-control-lg bg-secondary bg-opacity-10 text-white border-secondary border-opacity-20" rows="4" placeholder="Parlez-nous de vos besoins..." required></textarea>
+                                <textarea class="form-control bg-transparent text-white border-secondary" rows="4" placeholder="Your message..." required></textarea>
                             </div>
-                            <button type="submit" class="btn btn-danger btn-lg w-100 fw-bold py-3 text-uppercase">Envoyer le message</button>
+                            <button type="submit" class="btn btn-danger w-100 fw-bold uppercase">Send</button>
                         </form>
                     </div>
                 </div>
@@ -185,20 +134,11 @@
     </main>
 
     <footer class="bg-dark text-secondary py-4 border-top border-secondary border-opacity-20">
-        <div class="container">
-            <div class="row align-items-center gy-3 text-center text-md-start">
-                <div class="col-12 col-md-6">
-                    <span class="fw-bold text-white text-uppercase tracking-wider">DreamWeb</span> 
-                    &copy; 2026. Tout droit réservé à l'auteur.
-                </div>
-                <div class="col-12 col-md-6 text-md-end">
-                    <small class="text-muted text-opacity-70 fst-italic">
-                        Propriété intellectuelle exclusive. Reproduction, distribution et revente interdites sans autorisation.
-                    </small>
-                </div>
-            </div>
+        <div class="container text-center text-md-start">
+            <span class="fw-bold text-white text-uppercase">DreamWeb</span> &copy; 2026. All rights reserved.
         </div>
     </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
